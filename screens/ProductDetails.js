@@ -10,13 +10,48 @@ import {
 import React from "react";
 import * as FileSystem from "expo-file-system";
 import { shareAsync } from "expo-sharing";
-import { pdfDummy } from "../assets";
 
 const { width, height } = Dimensions.get("window");
 const COLORS = { primary: "#a9a9a9", white: "#fff" };
 
 export default function ProductDetails({ route, navigation }) {
   const { item } = route.params;
+
+  const downloadFile = async () => {
+    const filename = item?.details.pdfName;
+    const result = await FileSystem.downloadAsync(
+      item?.details.filePDF,
+      FileSystem.documentDirectory + filename
+    );
+    save(result.uri, filename, result.headers["Content-Type"]);
+  };
+
+  const save = async (uri, filename, mimetype) => {
+    // if (Platform.OS === "android") {
+    //   const permissions =
+    //     await FileSystem.StorageAccessFramework.requestDirectoryPermissionsAsync();
+    //   if (permissions.granted) {
+    //     const base64 = await FileSystem.readAsStringAsync(uri, {
+    //       encoding: FileSystem.EncodingType.Base64,
+    //     });
+    //     await FileSystem.StorageAccessFramework.createFileAsync(
+    //       perm.directoryUri,
+    //       filename,
+    //       mimetype
+    //     )
+    //       .then(async (uri) => {
+    //         await FileSystem.writeAsStringAsync(uri, base64, {
+    //           encoding: FileSystem.EncodingType.Base64,
+    //         });
+    //       })
+    //       .catch((e) => console.log(e));
+    //   } else {
+    //     shareAsync(uri);
+    //   }
+    // } else {
+    shareAsync(uri);
+    // }
+  };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
@@ -46,7 +81,7 @@ export default function ProductDetails({ route, navigation }) {
                 marginTop: 15,
               },
             ]}
-            onPress={() => {}}
+            onPress={downloadFile}
           >
             <Text
               style={{

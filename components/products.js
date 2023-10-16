@@ -7,7 +7,8 @@ const products = [
     details: {
       descriptionLong:
         "Long description of this item. This is the long descritpion.",
-      filePDF: "link to PDF file",
+      filePDF: "https://www.wackerneuson.de/media/contentserv/211914.pdf",
+      pdfName: "Manuals for product one.pdf",
     },
   },
   {
@@ -19,7 +20,8 @@ const products = [
     details: {
       descriptionLong:
         "Long description of this item. This is the long descritpion.",
-      filePDF: "link to PDF file",
+      filePDF: "https://www.wackerneuson.de/media/contentserv/211914.pdf",
+      pdfName: "Manuals for product two.pdf",
     },
   },
   {
@@ -31,7 +33,8 @@ const products = [
     details: {
       descriptionLong:
         "Long description of this item. This is the long descritpion.",
-      filePDF: "link to PDF file",
+      filePDF: "https://www.wackerneuson.de/media/contentserv/211914.pdf",
+      pdfName: "Manuals for product three.pdf",
     },
   },
   {
@@ -42,7 +45,8 @@ const products = [
     details: {
       descriptionLong:
         "Long description of this item. This is the long descritpion.",
-      filePDF: "link to PDF file",
+      filePDF: "https://www.wackerneuson.de/media/contentserv/211914.pdf",
+      pdfName: "Manuals for product four.pdf",
     },
   },
 ];

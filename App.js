@@ -4,7 +4,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ProductsList from "./screens/ProductsList";
 import ProductDetails from "./screens/ProductDetails";
-import PDFviewer from "./components/PDFviewer";
 
 const Stack = createNativeStackNavigator();
 
@@ -13,12 +12,11 @@ export default function App() {
     <>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="PDF"
+          initialRouteName="List"
           screenOptions={{ headerShown: false }}
         >
           <Stack.Screen name="List" component={ProductsList} />
           <Stack.Screen name="Details" component={ProductDetails} />
-          <Stack.Screen name="PDF" component={PDFviewer} />
         </Stack.Navigator>
       </NavigationContainer>
 
