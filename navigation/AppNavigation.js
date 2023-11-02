@@ -20,6 +20,7 @@ import {
 import { themeColors } from "../theme";
 import ProductScreen from "../screens/ProductScreen";
 import AboutUs from "../screens/AboutUs";
+import PdfViewPage from "../screens/PdfViewPage";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -36,6 +37,7 @@ export default function AppNavigation() {
         <Stack.Screen name="Home" component={HomeTabs} />
         <Stack.Screen name="Product" component={ProductScreen} />
         <Stack.Screen name="News" component={NewsScreen} />
+        <Stack.Screen name="PdfViewPage" component={PdfViewPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

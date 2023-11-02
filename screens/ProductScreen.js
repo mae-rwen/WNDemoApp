@@ -157,7 +157,10 @@ export default function ProductScreen(props) {
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => setOption("v3")}
+              onPress={() => {
+                setOption("v3");
+                navigation.navigate("PdfViewPage");
+              }}
               className="p-3 px-8 rounded-full"
               style={{
                 backgroundColor:
@@ -167,10 +170,9 @@ export default function ProductScreen(props) {
               <Text
                 className={`${
                   option === "v3" ? "text-white" : "text-gray-700"
-                } line-through`}
+                }`}
               >
-                {" "}
-                📲 v.3{" "}
+                View
               </Text>
             </TouchableOpacity>
           </View>
