@@ -1,4 +1,11 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Dimensions,
+  ScrollView,
+} from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
@@ -10,11 +17,15 @@ import {
 } from "react-native-heroicons/outline";
 import { HeartIcon, StarIcon } from "react-native-heroicons/solid";
 import { themeColors } from "../theme";
+import Pdf from "react-native-pdf";
+
+const { width, height } = Dimensions.get("window");
 
 export default function ProductScreen(props) {
   const item = props.route.params;
   const navigation = useNavigation();
   const [option, setOption] = useState("v1");
+  const pdfSource = { uri: item.pdfFile, cache: true };
 
   const downloadFileVersion1 = () => {
     const downloadFile = async () => {
@@ -58,7 +69,7 @@ export default function ProductScreen(props) {
   };
 
   return (
-    <View className="flex-1">
+    <ScrollView className="flex-1">
       <StatusBar style="light" />
       {/* background picture */}
       <Image
@@ -140,7 +151,9 @@ export default function ProductScreen(props) {
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => setOption("v2")}
+              onPress={() => {
+                setOption("v2");
+              }}
               className="p-3 px-8 rounded-full"
               style={{
                 backgroundColor:
@@ -159,7 +172,7 @@ export default function ProductScreen(props) {
             <TouchableOpacity
               onPress={() => {
                 setOption("v3");
-                navigation.navigate("PdfViewPage");
+                navigation.navigate("PdfViewPage", { ...item });
               }}
               className="p-3 px-8 rounded-full"
               style={{
@@ -172,37 +185,39 @@ export default function ProductScreen(props) {
                   option === "v3" ? "text-white" : "text-gray-700"
                 }`}
               >
-                View
+                Manuals
               </Text>
             </TouchableOpacity>
           </View>
         </View>
         {/* product description */}
-        <View className="mx-4 space-y-2">
-          <Text
-            style={{ color: themeColors.text }}
-            className="text-lg font-bold"
-          >
-            About
-          </Text>
-          <Text className="text-gray-600">{item.desc}</Text>
-        </View>
-
-        {/* buy button */}
-        <View className="flex-row justify-between px-4">
-          <TouchableOpacity className="p-4 rounded-full border border-gray-400">
-            <ShoppingCartIcon size="30" color="gray" />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{ backgroundColor: themeColors.bgLight }}
-            className="p-4 rounded-full flex-1 ml-4 justify-center"
-          >
-            <Text className="text-center text-white text-base font-semibold">
-              Check avaliability
+        <View className="flex-1">
+          <View className="m-4 space-y-2">
+            <Text
+              style={{ color: themeColors.text }}
+              className="text-lg font-bold"
+            >
+              About
             </Text>
-          </TouchableOpacity>
+            <Text className="text-gray-600">{item.desc}</Text>
+          </View>
+
+          {/* buy button */}
+          <View className="flex-row justify-between px-4 my-4">
+            <TouchableOpacity className="p-4 rounded-full border border-gray-400">
+              <ShoppingCartIcon size="30" color="gray" />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{ backgroundColor: themeColors.bgLight }}
+              className="p-4 rounded-full flex-1 ml-4 justify-center"
+            >
+              <Text className="text-center text-white text-base font-semibold">
+                Check avaliability
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }

@@ -33,6 +33,7 @@ export default function AppNavigation() {
           headerShown: false,
           contentStyle: { backgroundColor: "white" },
         }}
+        initialRouteName="Home"
       >
         <Stack.Screen name="Home" component={HomeTabs} />
         <Stack.Screen name="Product" component={ProductScreen} />
