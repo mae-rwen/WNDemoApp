@@ -1,14 +1,6 @@
-import {
-  View,
-  Text,
-  Dimensions,
-  Button,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-} from "react-native";
+import { View, Text, Dimensions, TouchableOpacity } from "react-native";
 import React from "react";
-import Pdf from "react-native-pdf";
+//import Pdf from "react-native-pdf";
 import { useNavigation } from "@react-navigation/native";
 import {
   ArrowDownTrayIcon,
@@ -24,10 +16,10 @@ export default function PdfViewPage(props) {
   const item = props.route.params;
   const navigation = useNavigation();
 
-  const pdfSource = {
-    uri: item?.pdfFile,
-    cache: true,
-  };
+  // const pdfSource = {
+  //   uri: item?.pdfFile,
+  //   cache: true,
+  // };
   return (
     <View className="flex-1">
       <StatusBar style="dark" />
@@ -59,14 +51,15 @@ export default function PdfViewPage(props) {
           </View>
         </View>
 
-        <Pdf
+        {/* <Pdf
           trustAllCerts={false}
           source={pdfSource}
           style={{
             width: width,
             height: height * 0.9,
           }}
-        />
+        /> */}
+        <Text>Odf view here</Text>
       </View>
     </View>
   );

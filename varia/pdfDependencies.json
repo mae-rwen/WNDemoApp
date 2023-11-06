@@ -1,0 +1,16 @@
+{
+    "dependencies": {
+      "@config-plugins/react-native-blob-util": "^6.0.0",
+      "@config-plugins/react-native-pdf": "^6.0.0",     
+      "expo-dev-client": "~2.4.11",     
+      "react-native-blob-util": "^0.19.2", 
+      "react-native-pdf": "^6.7.1",    
+    },
+
+  }
+  
+
+  "plugins": [
+    "@config-plugins/react-native-blob-util",
+    "@config-plugins/react-native-pdf"
+  ],

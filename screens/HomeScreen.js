@@ -87,7 +87,7 @@ export default function HomeScreen() {
         </View>
 
         {/* products cards */}
-        <ProductsCarousel productsItems={productsItems} />
+        <ProductsCarousel />
       </ScrollView>
     </View>
   );

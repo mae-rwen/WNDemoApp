@@ -49,6 +49,8 @@ export default function NewsCarousel() {
         horizontal
         showsHorizontalScrollIndicator={false}
         pagingEnabled
+        contentContainerStyle={{ justifyContent: "center" }}
+        snapToAlignment="center"
       />
       <TouchableOpacity
         onPress={previousNews}
@@ -59,7 +61,7 @@ export default function NewsCarousel() {
       <TouchableOpacity onPress={nextNews} className="absolute top-1/2 right-1">
         <ChevronRightIcon size="25" strokeWidth={1} color="white" />
       </TouchableOpacity>
-      <View className=" absolute bottom-5 right-0 left-0 flex-row justify-center">
+      <View className="absolute bottom-5 right-0 left-0 flex-row justify-center">
         {news.map((_, index) => (
           <View
             key={index}

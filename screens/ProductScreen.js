@@ -17,7 +17,6 @@ import {
 } from "react-native-heroicons/outline";
 import { HeartIcon, StarIcon } from "react-native-heroicons/solid";
 import { themeColors } from "../theme";
-import Pdf from "react-native-pdf";
 
 const { width, height } = Dimensions.get("window");
 

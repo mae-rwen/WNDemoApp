@@ -13,6 +13,8 @@ export default function NewsCard({ item }) {
         backgroundColor: themeColors.bgDark,
         height: height * 0.3,
         width: width,
+        justifyContent: "center",
+        alignItems: "center",
       }}
       className="relative"
     >
