@@ -11,6 +11,7 @@ import {
   HomeIcon as HomeOutline,
   HeartIcon as HeartOutline,
   InformationCircleIcon as InfoOutline,
+  QrCodeIcon,
 } from "react-native-heroicons/outline";
 import {
   HomeIcon as HomeSolid,
@@ -19,7 +20,7 @@ import {
 } from "react-native-heroicons/solid";
 import { themeColors } from "../theme";
 import ProductScreen from "../screens/ProductScreen";
-import AboutUs from "../screens/AboutUs";
+import CodesScanner from "../screens/CodesScanner";
 import PdfViewPage from "../screens/PdfViewPage";
 
 const Stack = createNativeStackNavigator();
@@ -62,7 +63,7 @@ function HomeTabs() {
     >
       <Tab.Screen name="HomeScreen" component={HomeScreen} />
       <Tab.Screen name="Favourites" component={Favourites} />
-      <Tab.Screen name="AboutUs" component={AboutUs} />
+      <Tab.Screen name="CodesScanner" component={CodesScanner} />
     </Tab.Navigator>
   );
 }
@@ -82,11 +83,11 @@ const menuIcons = (route, focused) => {
     ) : (
       <HeartOutline size="30" strokeWidth={2} color="white" />
     );
-  } else if (route.name === "AboutUs") {
+  } else if (route.name === "CodesScanner") {
     icon = focused ? (
-      <InfoSolid size="30" color="white" />
+      <QrCodeIcon size="30" strokeWidth={3} color="white" />
     ) : (
-      <InfoOutline size="30" strokeWidth={2} color="white" />
+      <QrCodeIcon size="30" strokeWidth={2} color="white" />
     );
   }
 
