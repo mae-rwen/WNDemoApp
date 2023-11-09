@@ -1,3 +1,7 @@
+// to be able to view the PDF files inside the app, you need to creat a development build before.
+// check the Expo documentation for details - https://docs.expo.dev/develop/development-builds/introduction/
+// after the build is complte, install following dependecies:
+
 {
     "dependencies": {
       "@config-plugins/react-native-blob-util": "^6.0.0",
@@ -6,11 +10,17 @@
       "react-native-blob-util": "^0.19.2", 
       "react-native-pdf": "^6.7.1",    
     },
+}
 
-  }
+// remember to put those plugins in app.json under "expo":
   
-
+{
   "plugins": [
     "@config-plugins/react-native-blob-util",
     "@config-plugins/react-native-pdf"
   ],
+}
+
+// run the development server and open the app on your device.
+
+// To be able to run the project with Expo go app, you have to uninstall the dependencies above and choose Expo Go as the enviroment while startking the server.

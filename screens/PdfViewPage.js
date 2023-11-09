@@ -59,7 +59,7 @@ export default function PdfViewPage(props) {
             height: height * 0.9,
           }}
         /> */}
-        <Text>Odf view here</Text>
+        <Text className="m-5">Pdf view here</Text>
       </View>
     </View>
   );
