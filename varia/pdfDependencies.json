@@ -22,5 +22,6 @@
 }
 
 // run the development server and open the app on your device.
+// go to screens/PdfViewPage.js and uncomment the PDF components.
 
 // To be able to run the project with Expo go app, you have to uninstall the dependencies above and choose Expo Go as the enviroment while startking the server.
